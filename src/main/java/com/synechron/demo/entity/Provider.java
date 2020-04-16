@@ -10,9 +10,15 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 @Entity
 @Table
-
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 public class Provider {
 	
 	@Id
@@ -22,50 +28,6 @@ public class Provider {
 	@JoinColumn(name="policyProviderID_ref")
 	private List<Policy> policies;
 	
-	
-	public Provider() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-	
-	
-	public Provider(int providerID, String providerName, List<Policy> policies) {
-		super();
-		this.providerID = providerID;
-		this.providerName = providerName;
-		this.policies = policies;
-	}
-
-
-	public int getProviderID() {
-		return providerID;
-	}
-
-
-	public void setProviderID(int providerID) {
-		this.providerID = providerID;
-	}
-
-
-	public String getProviderName() {
-		return providerName;
-	}
-
-
-	public void setProviderName(String providerName) {
-		this.providerName = providerName;
-	}
-
-
-	public List<Policy> getPolicies() {
-		return policies;
-	}
-
-
-	public void setPolicies(List<Policy> policies) {
-		this.policies = policies;
-	}
-
 
 	@Override
 	public String toString() {
